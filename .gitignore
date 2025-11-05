@@ -35,3 +35,7 @@ wordpress/wp-content/cache/
 # Database dumps / backups
 *.sql
 *.sql.gz
+database/
+!database/
+!database/*.sql
+!database/README.md
