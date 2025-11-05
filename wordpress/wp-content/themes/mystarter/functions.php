@@ -196,7 +196,7 @@ add_filter( 'allowed_block_types_all', 'mystarter_allowed_blocks' );
  * Register placeholder patterns directory.
  */
 function mystarter_register_block_patterns(): void {
-    $pattern_dir = get_stylesheet_directory() . '/patterns';
+    $pattern_dir = get_theme_file_path( 'patterns' );
 
     if ( ! is_dir( $pattern_dir ) ) {
         return;
@@ -209,10 +209,28 @@ function mystarter_register_block_patterns(): void {
         ]
     );
 
-    if ( function_exists( 'register_block_pattern_from_file' ) ) {
-        foreach ( glob( $pattern_dir . '/*.php' ) as $pattern_file ) {
-            register_block_pattern_from_file( $pattern_file );
+    foreach ( glob( $pattern_dir . '/*.php' ) as $pattern_file ) {
+        $pattern = include $pattern_file;
+
+        if ( ! is_array( $pattern ) ) {
+            continue;
         }
+
+        if ( empty( $pattern['title'] ) || empty( $pattern['content'] ) ) {
+            continue;
+        }
+
+        $slug = $pattern['slug'] ?? '';
+
+        if ( ! $slug ) {
+            $slug = 'mystarter/' . sanitize_title( basename( $pattern_file, '.php' ) );
+        } elseif ( false === strpos( $slug, '/' ) ) {
+            $slug = 'mystarter/' . sanitize_title( $slug );
+        }
+
+        unset( $pattern['slug'] );
+
+        register_block_pattern( $slug, $pattern );
     }
 }
 add_action( 'init', 'mystarter_register_block_patterns', 9 );
