@@ -100,3 +100,84 @@ database/                   # dumps SQL optionnels
 ```
 
 Pour plus de détails sur le thème, consulte `wordpress/wp-content/themes/mystarter/CODEX_NOTES.md`.
+
+## Préparer un nouveau site client avec le thème enfant
+
+Le dossier `wordpress/wp-content/themes/mystarter-child/` fournit un point de départ. Copie-le, renomme-le (ex. `mystarter-clientx`) et mets à jour les éléments suivants :
+
+### 1. Métadonnées du thème (style.css)
+
+Dans l’en-tête du fichier `style.css`, adapte les lignes suivantes :
+
+```css
+Theme Name: Nom du projet client
+Description: Thème enfant basé sur MyStarter pour {Nom du client}
+Author: Ton nom / agence
+Author URI: Ton site
+Template: mystarter
+Text Domain: slug-du-client
+Version: 1.0.0
+```
+
+- `Text Domain` sert aux traductions. Utilise un slug unique (ex. `mystarter-clientx`).
+- Incrémente `Version` lorsqu’une livraison est faite au client.
+
+### 2. Capture d’écran (screenshot.png)
+
+- Génère une miniature 1200×900px avec l’identité visuelle du client.
+- Remplace `screenshot.png` dans le thème enfant.
+- Mets à jour régulièrement si le design évolue ; WordPress l’affiche dans l’écran `Apparence → Thèmes`.
+
+### 3. Chargement des styles/scripts (functions.php)
+
+Le fichier fourni contient l’enqueue minimal :
+
+```php
+add_action(
+    'wp_enqueue_scripts',
+    static function () {
+        wp_enqueue_style(
+            'mystarter-child-style',
+            get_stylesheet_uri(),
+            [ 'mystarter-style' ],
+            wp_get_theme()->get( 'Version' )
+        );
+    }
+);
+```
+
+- Ajoute ici les scripts en file d’attente propres au projet (ex. librairies front, CSS supplémentaires).
+- Évite de surcharger `functions.php` du parent ; place tout ce qui est spécifique client dans l’enfant.
+
+### 4. Personnalisation du thème enfant – bonnes pratiques
+
+1. **Styles SCSS/CSS** :
+   - Crée un dossier `assets/` ou `scss/` si nécessaire ; compile ensuite dans `style.css` ou un fichier dédié enqueue via `wp_enqueue_style`.
+   - Utilise des classes BEM ou des classes utilitaires spécifiques au client pour éviter les collisions avec le parent.
+
+2. **PHP / Hooks** :
+   - Ajoute tes actions/filters dans `functions.php`. Exemple : déclarer un CPT additionnel, modifier un comportement de bloc, etc.
+   - Si le code devient conséquent, organise-le en fichiers et `require`-les depuis `functions.php`.
+
+3. **Templates / Patterns** :
+   - Pour modifier un template du parent, copie le fichier depuis `mystarter/templates/` ou `parts/` vers le même chemin dans ton thème enfant, puis ajuste-le.
+   - Crée de nouveaux patterns dans `patterns/` de l’enfant pour les compositions propres au client.
+
+4. **Blocs** :
+   - Si le projet nécessite un bloc spécifique, développe-le dans l’enfant (structure similaire au parent : `src/blocks/...`).
+   - Ajuste le `package.json` de l’enfant pour compiler ses assets si tu y ajoutes du JS/SCSS.
+
+5. **Options `theme.json`** :
+   - Le thème parent définit déjà palette, typos, etc. Pour les overrides client, crée un `theme.json` dans l’enfant avec uniquement les sections à surcharger.
+
+### 5. To-do rapide lors d’un nouveau projet
+
+1. Dupliquer `mystarter-child` → `mystarter-{client}`.
+2. Mettre à jour `style.css` (métadonnées + éventuels styles de base).
+3. Remplacer `screenshot.png` par la miniature du client.
+4. Ajouter/adapter `functions.php` (scripts, hooks spécifiques).
+5. Créer un `theme.json` enfant si palette/typo doivent diverger.
+6. Ajouter des patterns, templates ou SCSS supplémentaires si nécessaire.
+7. Activer le nouveau thème enfant dans WordPress.
+
+En suivant ces étapes, MyStarter reste le parent centralisé et chaque site client dispose d’une couche propre et maintenable.
