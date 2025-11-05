@@ -1,0 +1,23 @@
+/*
+ * Styles globaux côté front pour le projet client.
+ */
+
+@use './styles/variables' as *;
+
+body {
+	background-color: var(--mystarter-client-background, $client-background);
+}
+
+// Place custom selectors below. Remove the examples when starting a project.
+.mystarter-client-button {
+	border-radius: 999px;
+	padding: 0.85rem 1.7rem;
+	background: $client-primary;
+	color: #fff;
+	font-weight: 600;
+
+	&:hover,
+	&:focus {
+		background: scale-color($client-primary, $lightness: -8%);
+	}
+}

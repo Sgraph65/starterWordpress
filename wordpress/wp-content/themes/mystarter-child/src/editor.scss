@@ -1,0 +1,11 @@
+/*
+ * Styles spécifiques à l’éditeur (Gutenberg).
+ */
+
+@use './styles/variables' as *;
+
+.edit-post-visual-editor .mystarter-client-highlight {
+	border: 2px dashed $client-primary;
+	padding: 1rem;
+	border-radius: 12px;
+}
