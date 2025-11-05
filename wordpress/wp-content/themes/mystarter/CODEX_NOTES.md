@@ -4,7 +4,7 @@ Ce document synthétise tout ce que l’IA a mis en place dans le starter WordPr
 
 ## Contexte général
 
-- Thème enfant **MyStarter** basé sur Twenty Twenty-Four (`wp-content/themes/mystarter`).
+- **MyStarter** est désormais un thème parent autonome (`wp-content/themes/mystarter`).
 - Tous les blocs natifs Gutenberg sont désactivés : seuls les blocs personnalisés listés ci-dessous sont exposés.
 - Tooling : `@wordpress/scripts`, Sass, PostCSS, ESLint, Stylelint, Prettier (`npm run build`, `npm run start`, etc.).
 - Les assets sont générés dans `build/`. Toujours relancer `npm run build` après modifications dans `src/` pour refléter les nouveautés en BO.
@@ -34,9 +34,11 @@ Chaque bloc utilise désormais une approche “Formulaire” dans le panneau Ins
 3. Maintenir la prévisualisation dans le canvas pour un rendu fidèle.
 4. Bloquer la vue HTML (`supports.html = false`) pour éviter une édition non contrôlée.
 
-## Patterns et variations
+## Patterns, templates et variations
 
-- `patterns/cta.php` et `patterns/hero.php` fournissent plusieurs préconfigurations pour les blocs CTA et Hero (variantes slider, image fixe, vidéo). Pensez à compléter ce dossier pour de nouvelles compositions.
+- `patterns/cta.php`, `hero.php`, `hero-slider.php`, `hero-video.php` fournissent des variantes prêtes à l’emploi.
+- Les templates FSE de base (header/footer, index, page, single, archive, 404, front-page) sont fournis dans `parts/` et `templates/`.
+- Pense à enrichir ces dossiers lors de nouvelles compositions.
 
 ## Contenu dynamique
 
@@ -53,8 +55,13 @@ Chaque bloc utilise désormais une approche “Formulaire” dans le panneau Ins
 
 1. `npm install`
 2. `npm run build` (ou `npm run start` pendant le dev)
-3. Activer le thème MyStarter si besoin & recharger l’éditeur.
+3. Activer le **thème enfant** du projet (exemple fourni `wp-content/themes/mystarter-child`) ; il référence automatiquement MyStarter.
 4. Vérifier `Apparence → Compositions` pour retrouver les patterns hero/CTA.
+
+## Thème enfant
+
+- Un thème enfant générique se trouve dans `wp-content/themes/mystarter-child`.
+- Pour un nouveau projet : dupliquer ce dossier, renommer le thème (`style.css` + `Text Domain`) et ajouter les surcharges propres au client.
 
 ## Ressources utiles
 

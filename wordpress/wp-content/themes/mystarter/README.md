@@ -1,12 +1,12 @@
 # MyStarter Theme
 
-Starter WordPress child theme based on Twenty Twenty-Four with a curated Gutenberg experience and a custom library of blocks designed for marketing pages.
+Starter **parent** WordPress theme providing a curated Gutenberg experience and a custom library of blocks designed for marketing pages.
 
 ## Installation
 
 1. From the theme directory run `npm install`.
 2. Build assets with `npm run build` (use `npm run start` for watch mode).
-3. Activate the **MyStarter** theme in `Apparence → Thèmes`.
+3. Activate **MyStarter** as the parent (or preferably a child theme based on it, cf. ci-dessous).
 4. Flush permalinks after activation to expose the `Actualités` custom post type.
 
 ## Available npm scripts
@@ -39,6 +39,7 @@ They live under the “MyStarter” block category and include both editor/front
 - `theme.json` with curated color palette, typography, layout and spacing scales.
 - `Actualités` custom post type for news, surfaced inside the custom blocks.
 - Block patterns (hero & CTA) registered via the `patterns/` directory.
+- Base header/footer and templates fournis (`parts/`, `templates/`) pour un thème Full Site Editing léger.
 - Optional slider behaviour handled via `src/frontend/index.js`.
 - Build tooling powered by `@wordpress/scripts`, Sass, PostCSS, ESLint, Stylelint and Prettier.
 
@@ -53,6 +54,30 @@ They live under the “MyStarter” block category and include both editor/front
 1. Edit files under `src/`.
 2. Run `npm run start` during development for live rebuilds.
 3. Commit generated `build/` assets when distributing the theme.
+
+## Utilisation comme thème parent
+
+Pour chaque nouveau projet client :
+
+1. Crée un dossier de thème enfant (ex. `mystarter-client`) avec un `style.css` contenant `Template: mystarter`.
+2. Ajoute un `functions.php` minimal pour charger les styles du parent :
+   ```php
+   <?php
+   add_action(
+       'wp_enqueue_scripts',
+       static function () {
+           wp_enqueue_style(
+               'mystarter-child-style',
+               get_stylesheet_uri(),
+               [ 'mystarter-style' ],
+               wp_get_theme()->get( 'Version' )
+           );
+       }
+   );
+   ```
+3. Place tes ajustements spécifiques (styles, hooks, patterns…) dans le thème enfant.
+
+Un thème enfant d’exemple est fourni dans `wp-content/themes/mystarter-child`.
 
 ## Cleaning up
 

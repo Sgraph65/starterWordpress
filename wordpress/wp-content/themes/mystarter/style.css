@@ -1,10 +1,13 @@
 /*
 Theme Name: MyStarter
-Theme URI: http://wordpress-2025.lan:8000/
-Description: Thème enfant pour Twenty Twenty-Four.
+Theme URI: https://github.com/Sgraph65/starterWordpress
+Description: Thème parent WordPress optimisé pour Gutenberg avec librairie de blocs personnalisés.
 Author: seb
-Template: twentytwentyfour
-Version: 1.0.0
+Author URI: https://github.com/Sgraph65
+Version: 1.1.0
+Requires at least: 6.5
+Tested up to: 6.5
+Requires PHP: 8.0
 Text Domain: mystarter
 */
 

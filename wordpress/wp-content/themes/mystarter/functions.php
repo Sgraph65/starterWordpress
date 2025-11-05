@@ -12,7 +12,7 @@ if ( ! function_exists( 'mystarter_setup' ) ) {
      * Configure theme defaults and support for various WordPress features.
      */
     function mystarter_setup(): void {
-        load_child_theme_textdomain( 'mystarter', get_stylesheet_directory() . '/languages' );
+        load_theme_textdomain( 'mystarter', get_template_directory() . '/languages' );
 
         add_theme_support( 'editor-styles' );
         add_theme_support( 'wp-block-styles' );
@@ -25,27 +25,16 @@ if ( ! function_exists( 'mystarter_setup' ) ) {
 }
 add_action( 'after_setup_theme', 'mystarter_setup' );
 
-if ( ! function_exists( 'mystarter_enqueue_styles' ) ) {
-    /**
-     * Load parent and child theme stylesheets.
-     */
-    function mystarter_enqueue_styles(): void {
-        $parent_handle = 'twentytwentyfour-style';
-
-        wp_enqueue_style(
-            $parent_handle,
-            get_template_directory_uri() . '/style.css',
-            [],
-            wp_get_theme()->parent()->get( 'Version' )
-        );
-
-        wp_enqueue_style(
-            'mystarter-style',
-            get_stylesheet_directory_uri() . '/style.css',
-            [ $parent_handle ],
-            MYSTARTER_VERSION
-        );
-    }
+/**
+ * Enqueue theme stylesheet.
+ */
+function mystarter_enqueue_styles(): void {
+    wp_enqueue_style(
+        'mystarter-style',
+        get_template_directory_uri() . '/style.css',
+        [],
+        MYSTARTER_VERSION
+    );
 }
 add_action( 'wp_enqueue_scripts', 'mystarter_enqueue_styles' );
 
