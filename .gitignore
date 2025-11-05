@@ -29,6 +29,7 @@ wordpress/wp-content/themes/*
 !wordpress/wp-content/themes/mystarter/**
 !wordpress/wp-content/themes/mystarter-child/
 !wordpress/wp-content/themes/mystarter-child/**
+!wordpress/wp-content/themes/.gitkeep
 
 # WordPress uploads/cache
 wordpress/wp-content/uploads/
