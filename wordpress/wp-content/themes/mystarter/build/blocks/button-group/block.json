@@ -1,0 +1,42 @@
+{
+  "apiVersion": 2,
+  "name": "mystarter/button-group",
+  "title": "Groupe de boutons",
+  "description": "Ajoutez un ensemble de boutons personnalisés.",
+  "category": "design",
+  "icon": "button",
+  "supports": {
+    "align": [
+      "wide"
+    ],
+    "html": false,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "attributes": {
+    "buttons": {
+      "type": "array",
+      "default": []
+    },
+    "layout": {
+      "type": "string",
+      "default": "row"
+    }
+  },
+  "example": {
+    "attributes": {
+      "buttons": [
+        {
+          "label": "En savoir plus",
+          "url": "#"
+        },
+        {
+          "label": "Contact",
+          "url": "#"
+        }
+      ]
+    }
+  }
+}

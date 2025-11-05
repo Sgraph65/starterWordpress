@@ -1,0 +1,89 @@
+@use "../../styles/variables" as *;
+
+.mystarter-block-slider {
+	position: relative;
+
+	&__viewport {
+		position: relative;
+		overflow: hidden;
+		border-radius: $border-radius;
+		box-shadow: $shadow-soft;
+	}
+
+	&__slides {
+		display: flex;
+		scroll-behavior: smooth;
+		transition: transform 0.5s ease;
+	}
+
+	&__slide {
+		position: relative;
+		min-width: 100%;
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+		}
+
+		figcaption {
+			position: absolute;
+			left: 2rem;
+			right: 2rem;
+			bottom: 2rem;
+			background: rgba(0, 0, 0, 0.55);
+			color: #fff;
+			padding: 1rem 1.25rem;
+			border-radius: $border-radius;
+		}
+	}
+
+	&__control {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		background: rgba(255, 255, 255, 0.85);
+		border: 0;
+		border-radius: 50%;
+		width: 48px;
+		height: 48px;
+		font-size: 1.75rem;
+		color: $color-text;
+		cursor: pointer;
+		transition: transform 0.2s ease, background 0.2s ease;
+
+		&:hover {
+			background: #fff;
+			transform: translateY(-50%) scale(1.05);
+		}
+
+		&.is-prev {
+			left: 1rem;
+		}
+
+		&.is-next {
+			right: 1rem;
+		}
+	}
+
+	&__dots {
+		display: flex;
+		justify-content: center;
+		gap: 0.5rem;
+		margin-top: 1rem;
+
+		button {
+			width: 10px;
+			height: 10px;
+			border-radius: 999px;
+			background: rgba($color-text, 0.2);
+			border: 0;
+			cursor: pointer;
+
+			&.is-active {
+				background: $color-accent;
+			}
+		}
+	}
+}

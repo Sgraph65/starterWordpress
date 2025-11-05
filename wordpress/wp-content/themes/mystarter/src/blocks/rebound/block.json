@@ -1,0 +1,49 @@
+{
+	"apiVersion": 2,
+	"name": "mystarter/rebound",
+	"title": "Bloc rebond",
+	"description": "Mettez en avant une sélection de contenus internes.",
+	"category": "widgets",
+	"icon": "admin-links",
+	"supports": {
+		"align": ["wide", "full"],
+		"html": false,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"items": {
+			"type": "array",
+			"default": []
+		},
+		"context": {
+			"type": "string",
+			"default": "page"
+		},
+		"columns": {
+			"type": "number",
+			"default": 3
+		}
+	},
+	"example": {
+		"attributes": {
+			"columns": 3,
+			"items": [
+				{
+					"title": "Découvrir nos services",
+					"link": "#"
+				},
+				{
+					"title": "Voir nos réalisations",
+					"link": "#"
+				},
+				{
+					"title": "Lire nos actualités",
+					"link": "#"
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,23 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.mystarter-block-image {
+	@include responsive-container;
+
+	display: flex;
+	flex-direction: column;
+	gap: $spacing-unit * 0.5;
+	text-align: center;
+
+	img {
+		width: 100%;
+		height: auto;
+		border-radius: $border-radius;
+		box-shadow: $shadow-soft;
+	}
+
+	&__caption {
+		color: $color-muted;
+		font-size: 0.95rem;
+	}
+}

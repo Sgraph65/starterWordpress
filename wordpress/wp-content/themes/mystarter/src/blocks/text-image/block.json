@@ -1,0 +1,54 @@
+{
+	"apiVersion": 2,
+	"name": "mystarter/text-image",
+	"title": "Texte + image",
+	"description": "Présente un texte accompagné d'une image à gauche ou à droite.",
+	"category": "layout",
+	"icon": "align-pull-left",
+	"supports": {
+		"align": ["wide", "full"],
+		"html": false,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"title": {
+			"type": "string",
+			"source": "html",
+			"selector": "h2"
+		},
+		"content": {
+			"type": "string",
+			"source": "html",
+			"selector": ".mystarter-text-image__content"
+		},
+		"mediaId": {
+			"type": "number"
+		},
+		"mediaUrl": {
+			"type": "string"
+		},
+		"mediaAlt": {
+			"type": "string",
+			"default": ""
+		},
+		"imagePosition": {
+			"type": "string",
+			"default": "right"
+		},
+		"background": {
+			"type": "string",
+			"default": "light"
+		}
+	},
+	"example": {
+		"attributes": {
+			"title": "Titre de section",
+			"content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>",
+			"imagePosition": "left",
+			"mediaUrl": "https://via.placeholder.com/720x540"
+		}
+	}
+}

@@ -1,0 +1,42 @@
+{
+	"name": "mystarter-theme",
+	"version": "1.0.0",
+	"description": "Custom Gutenberg starter theme for WordPress.",
+	"private": true,
+	"scripts": {
+		"build": "wp-scripts build",
+		"start": "wp-scripts start",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"format": "wp-scripts format"
+	},
+	"devDependencies": {
+		"@wordpress/browserslist-config": "^5.0.0",
+		"@wordpress/eslint-plugin": "^18.0.0",
+		"@wordpress/scripts": "^29.0.0",
+		"@wordpress/stylelint-config": "^21.0.0",
+		"postcss": "^8.4.33",
+		"postcss-scss": "^4.0.9",
+		"sass": "^1.70.0"
+	},
+	"browserslist": [
+		"extends @wordpress/browserslist-config"
+	],
+	"stylelint": {
+		"customSyntax": "postcss-scss",
+		"extends": "@wordpress/stylelint-config",
+		"rules": {
+			"at-rule-no-unknown": null,
+			"selector-class-pattern": null,
+			"value-keyword-case": null,
+			"rule-empty-line-before": null,
+			"at-rule-empty-line-before": null,
+			"color-hex-length": null
+		}
+	},
+	"eslintConfig": {
+		"extends": [
+			"plugin:@wordpress/eslint-plugin/recommended"
+		]
+	}
+}

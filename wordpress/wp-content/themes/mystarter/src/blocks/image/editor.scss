@@ -1,0 +1,10 @@
+@use "../../styles/variables" as *;
+
+.mystarter-block-image {
+	border: 1px dashed rgba($color-muted, 0.5);
+	padding: $spacing-unit;
+
+	.components-button.is-link {
+		color: $color-accent;
+	}
+}

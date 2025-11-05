@@ -1,0 +1,44 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixins" as *;
+
+.mystarter-button-group {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+
+	&.is-column {
+		flex-direction: column;
+	}
+
+	.mystarter-button {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		padding: 0.875rem 1.75rem;
+		font-weight: 600;
+		border-radius: 999px;
+		text-decoration: none;
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+		@include focus-ring;
+
+		&:hover {
+			transform: translateY(-1px);
+			box-shadow: $shadow-soft;
+		}
+
+		&.is-primary {
+			background: $color-accent;
+			color: #fff;
+		}
+
+		&.is-secondary {
+			background: #1f2933;
+			color: #fff;
+		}
+
+		&.is-ghost {
+			border: 1px solid rgba($color-text, 0.35);
+			color: $color-text;
+		}
+	}
+}

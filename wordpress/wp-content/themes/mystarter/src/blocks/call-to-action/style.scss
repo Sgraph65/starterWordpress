@@ -1,0 +1,76 @@
+@use "../../styles/variables" as *;
+
+.mystarter-cta {
+	position: relative;
+	overflow: hidden;
+	padding: clamp(3rem, 8vw, 6rem) clamp(2rem, 5vw, 4rem);
+	border-radius: $border-radius;
+	color: #fff;
+	background: linear-gradient(135deg, $color-accent, $color-accent-dark);
+	background-size: cover;
+	background-position: center;
+
+	&__overlay {
+		position: absolute;
+		inset: 0;
+		background: rgba(17, 24, 39, 0.45);
+	}
+
+	&__inner {
+		position: relative;
+		z-index: 1;
+		max-width: 48rem;
+		display: grid;
+		gap: 1.25rem;
+	}
+
+	&__eyebrow {
+		text-transform: uppercase;
+		font-weight: 600;
+		letter-spacing: 0.2em;
+		font-size: 0.85rem;
+	}
+
+	h2 {
+		margin: 0;
+		font-family: $font-secondary;
+		font-size: clamp(2.2rem, 6vw, 3rem);
+	}
+
+	&__content {
+		font-size: 1.1rem;
+		line-height: 1.7;
+
+		p {
+			margin: 0 0 0.75rem;
+		}
+	}
+
+	.mystarter-button {
+		justify-self: start;
+		background: #fff;
+		color: $color-text;
+	}
+
+	&.has-dark-accent {
+		background: linear-gradient(135deg, #111827, #1f2937);
+
+		&__overlay {
+			background: rgba(0, 0, 0, 0.4);
+		}
+
+		.mystarter-button {
+			background: $color-accent;
+			color: #fff;
+		}
+	}
+
+	&.has-light-accent {
+		background: #f3f4f6;
+		color: $color-text;
+
+		&__overlay {
+			background: rgba(255, 255, 255, 0.8);
+		}
+	}
+}

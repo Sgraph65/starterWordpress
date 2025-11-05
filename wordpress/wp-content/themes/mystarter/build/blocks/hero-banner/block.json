@@ -1,0 +1,86 @@
+{
+  "apiVersion": 2,
+  "name": "mystarter/hero-banner",
+  "title": "Hero banner",
+  "category": "mystarter",
+  "icon": "welcome-widgets-menus",
+  "description": "Section hero avec variantes slider, image ou vidéo.",
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false,
+    "spacing": {
+      "padding": true,
+      "margin": true
+    }
+  },
+  "attributes": {
+    "layout": {
+      "type": "string",
+      "default": "static"
+    },
+    "eyebrow": {
+      "type": "string",
+      "default": ""
+    },
+    "title": {
+      "type": "string",
+      "source": "html",
+      "selector": "h1"
+    },
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": ".mystarter-hero__content"
+    },
+    "buttonText": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "openInNewTab": {
+      "type": "boolean",
+      "default": false
+    },
+    "mediaId": {
+      "type": "number"
+    },
+    "mediaUrl": {
+      "type": "string"
+    },
+    "mediaAlt": {
+      "type": "string",
+      "default": ""
+    },
+    "videoUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "slides": {
+      "type": "array",
+      "default": []
+    },
+    "sliderAutoplay": {
+      "type": "boolean",
+      "default": true
+    },
+    "sliderInterval": {
+      "type": "number",
+      "default": 6000
+    }
+  },
+  "example": {
+    "attributes": {
+      "layout": "static",
+      "title": "<strong>Accroche puissante</strong>",
+      "content": "<p>Déployez vos campagnes avec un hero modulable.</p>",
+      "mediaUrl": "https://via.placeholder.com/1600x900",
+      "buttonText": "Découvrir"
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+	"apiVersion": 2,
+	"name": "mystarter/quote",
+	"title": "Citation",
+	"description": "Une citation stylisée avec attribution.",
+	"category": "text",
+	"icon": "format-quote",
+	"supports": {
+		"align": ["wide"],
+		"html": false,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"content": {
+			"type": "string",
+			"source": "html",
+			"selector": "blockquote p"
+		},
+		"citation": {
+			"type": "string",
+			"source": "html",
+			"selector": "cite"
+		},
+		"accent": {
+			"type": "boolean",
+			"default": true
+		}
+	},
+	"example": {
+		"attributes": {
+			"content": "<p>La créativité, c’est l’intelligence qui s’amuse.</p>",
+			"citation": "Albert Einstein"
+		}
+	}
+}

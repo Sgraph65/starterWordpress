@@ -1,0 +1,49 @@
+{
+	"apiVersion": 2,
+	"name": "mystarter/gallery",
+	"title": "Galerie d'images",
+	"description": "Affiche une grille responsive d'images.",
+	"category": "media",
+	"icon": "images-alt2",
+	"supports": {
+		"align": ["wide", "full"],
+		"html": false,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"images": {
+			"type": "array",
+			"default": []
+		},
+		"columns": {
+			"type": "number",
+			"default": 3
+		},
+		"displayCaptions": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"example": {
+		"attributes": {
+			"columns": 3,
+			"images": [
+				{
+					"url": "https://via.placeholder.com/600x600",
+					"alt": "Image 1"
+				},
+				{
+					"url": "https://via.placeholder.com/600x600",
+					"alt": "Image 2"
+				},
+				{
+					"url": "https://via.placeholder.com/600x600",
+					"alt": "Image 3"
+				}
+			]
+		}
+	}
+}

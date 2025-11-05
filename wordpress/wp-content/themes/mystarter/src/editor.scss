@@ -1,0 +1,6 @@
+@use "styles/variables" as *;
+
+.editor-styles-wrapper {
+	color: $color-text;
+	background-color: $color-editor-background;
+}

@@ -1,0 +1,17 @@
+# OS junk
+.DS_Store
+
+# Node dependencies & caches
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# Build tooling
+.cache/
+.tmp/
+
+# Local env
+.env
+.env.local

@@ -1,0 +1,28 @@
+@use "../../styles/variables" as *;
+
+.mystarter-quote {
+	position: relative;
+	padding: clamp(2.5rem, 6vw, 4.5rem);
+	border-radius: $border-radius;
+	background: #fff;
+	box-shadow: $shadow-soft;
+	font-size: 1.3rem;
+	line-height: 1.7;
+
+	&__content {
+		margin: 0;
+		font-style: italic;
+	}
+
+	&__citation {
+		display: block;
+		margin-top: 1.5rem;
+		font-size: 1rem;
+		font-weight: 600;
+		color: $color-accent;
+	}
+
+	&.is-accented {
+		border-left: 6px solid $color-accent;
+	}
+}

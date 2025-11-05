@@ -1,0 +1,47 @@
+{
+	"apiVersion": 2,
+	"name": "mystarter/image",
+	"title": "Image",
+	"description": "Affiche une image avec légende et lien optionnels.",
+	"category": "media",
+	"icon": "format-image",
+	"supports": {
+		"align": ["wide", "full"],
+		"html": false,
+		"spacing": {
+			"margin": true
+		}
+	},
+	"attributes": {
+		"mediaId": {
+			"type": "number"
+		},
+		"mediaUrl": {
+			"type": "string"
+		},
+		"alt": {
+			"type": "string",
+			"default": ""
+		},
+		"caption": {
+			"type": "string",
+			"source": "html",
+			"selector": "figcaption"
+		},
+		"linkUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"openInNewTab": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"example": {
+		"attributes": {
+			"mediaUrl": "https://via.placeholder.com/1200x800",
+			"alt": "Image de démonstration",
+			"caption": "Légende d'exemple"
+		}
+	}
+}

@@ -1,0 +1,15 @@
+@use "variables" as *;
+
+@mixin responsive-container {
+	margin-inline: auto;
+	width: min(100% - 2 * $spacing-unit, 1200px);
+}
+
+@mixin focus-ring {
+	outline: 3px solid transparent;
+	outline-offset: 3px;
+
+	&:focus {
+		outline-color: $color-accent;
+	}
+}

@@ -1,0 +1,12 @@
+@use "../../styles/variables" as *;
+
+.mystarter-text-image {
+	border: 1px dashed rgba($color-muted, 0.4);
+}
+
+.mystarter-text-image__media-button {
+	padding: 0;
+	border: 0;
+	background: none;
+	cursor: pointer;
+}

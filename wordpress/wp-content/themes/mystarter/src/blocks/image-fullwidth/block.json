@@ -1,0 +1,38 @@
+{
+	"apiVersion": 2,
+	"name": "mystarter/image-fullwidth",
+	"title": "Image pleine largeur",
+	"description": "Affiche une image qui occupe toute la largeur disponible.",
+	"category": "media",
+	"icon": "align-full-width",
+	"supports": {
+		"align": ["full"],
+		"html": false,
+		"spacing": {
+			"margin": true
+		}
+	},
+	"attributes": {
+		"mediaId": {
+			"type": "number"
+		},
+		"mediaUrl": {
+			"type": "string"
+		},
+		"alt": {
+			"type": "string",
+			"default": ""
+		},
+		"caption": {
+			"type": "string",
+			"source": "html",
+			"selector": "figcaption"
+		}
+	},
+	"example": {
+		"attributes": {
+			"mediaUrl": "https://via.placeholder.com/1600x700",
+			"alt": "Visuel pleine largeur"
+		}
+	}
+}

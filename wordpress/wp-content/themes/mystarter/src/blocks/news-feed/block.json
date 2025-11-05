@@ -1,0 +1,47 @@
+{
+	"apiVersion": 2,
+	"name": "mystarter/news-feed",
+	"title": "Remontée actualités",
+	"description": "Affiche les dernières actualités avec une mise en avant.",
+	"category": "widgets",
+	"icon": "rss",
+	"supports": {
+		"align": ["wide", "full"],
+		"html": false,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"highlightId": {
+			"type": "number"
+		},
+		"highlight": {
+			"type": "object"
+		},
+		"items": {
+			"type": "array",
+			"default": []
+		},
+		"postsPerPage": {
+			"type": "number",
+			"default": 4
+		}
+	},
+	"example": {
+		"attributes": {
+			"items": [
+				{
+					"title": "Nouvelle fonctionnalité disponible",
+					"excerpt": "Nous lançons notre nouvelle suite d'outils digitaux.",
+					"link": "#"
+				},
+				{
+					"title": "Retour sur notre dernier événement",
+					"link": "#"
+				}
+			]
+		}
+	}
+}

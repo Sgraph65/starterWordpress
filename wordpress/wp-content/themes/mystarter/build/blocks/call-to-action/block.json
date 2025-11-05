@@ -1,0 +1,65 @@
+{
+  "apiVersion": 2,
+  "name": "mystarter/call-to-action",
+  "title": "Call to action",
+  "description": "Une section d’appel à l’action avec bouton.",
+  "category": "design",
+  "icon": "megaphone",
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false,
+    "spacing": {
+      "padding": true,
+      "margin": true
+    }
+  },
+  "attributes": {
+    "eyebrow": {
+      "type": "string",
+      "default": ""
+    },
+    "title": {
+      "type": "string",
+      "source": "html",
+      "selector": "h2"
+    },
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": ".mystarter-cta__content"
+    },
+    "buttonText": {
+      "type": "string",
+      "default": ""
+    },
+    "buttonUrl": {
+      "type": "string",
+      "default": ""
+    },
+    "openInNewTab": {
+      "type": "boolean",
+      "default": false
+    },
+    "accent": {
+      "type": "string",
+      "default": "accent"
+    },
+    "backgroundImageId": {
+      "type": "number"
+    },
+    "backgroundImageUrl": {
+      "type": "string"
+    }
+  },
+  "example": {
+    "attributes": {
+      "eyebrow": "Nouveauté",
+      "title": "Prêt à démarrer votre projet ?",
+      "content": "<p>Nous accompagnons vos équipes pour concevoir des expériences performantes.</p>",
+      "buttonText": "Nous contacter"
+    }
+  }
+}

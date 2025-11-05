@@ -1,0 +1,133 @@
+@media (min-width: 1280px) {
+	.edit-post-layout {
+		--mystarter-inspector-width: 380px;
+	}
+
+	.edit-post-layout .interface-interface-skeleton__sidebar,
+	.edit-post-layout .interface-complementary-area,
+	.edit-post-layout .interface-complementary-area__fill,
+	.edit-post-layout .edit-post-sidebar {
+		width: var(--mystarter-inspector-width) !important;
+		max-width: var(--mystarter-inspector-width) !important;
+		flex: 0 0 var(--mystarter-inspector-width) !important;
+	}
+
+	.edit-post-layout .interface-complementary-area .components-tab-panel,
+	.edit-post-layout .interface-complementary-area .components-tab-panel__tabs,
+	.edit-post-layout .interface-complementary-area .components-tab-panel__tablist,
+	.edit-post-layout .interface-complementary-area .components-tab-panel__tab {
+		width: 100% !important;
+		max-width: 100% !important;
+	}
+
+	.edit-post-layout .edit-post-sidebar__panel-tabs,
+	.edit-post-layout .edit-post-sidebar__panel-tabs .components-button,
+	.edit-post-layout .edit-post-sidebar__panel-tabs button,
+	.edit-post-layout .edit-post-sidebar__panel-tabs .components-tab-panel__tabs,
+	.edit-post-layout .edit-post-sidebar__panel-tabs .components-tab-panel__tablist {
+		width: 100% !important;
+		max-width: 100% !important;
+	}
+
+	.edit-post-layout
+		.edit-post-sidebar__panel-tabs
+		[role='tablist'][aria-orientation='horizontal'] {
+		width: 100% !important;
+		max-width: 100% !important;
+		justify-content: space-between;
+	}
+
+	.edit-post-layout .interface-complementary-area [role='tablist'] {
+		width: 100% !important;
+		max-width: 100% !important;
+	}
+
+	.edit-post-layout .interface-complementary-area [role='tab'] {
+		flex: 1 1 auto;
+	}
+
+	.edit-post-layout .edit-post-sidebar__panel-tabs .components-button,
+	.edit-post-layout .edit-post-sidebar__panel-tabs button {
+		justify-content: center;
+	}
+
+	.edit-post-layout .interface-complementary-area .components-tab-panel__tabs button,
+	.edit-post-layout .interface-complementary-area .components-tab-panel__tablist,
+	.edit-post-layout .interface-complementary-area .components-tab-panel__tablist .components-tab-panel__tab {
+		width: 100% !important;
+		max-width: 100% !important;
+	}
+
+	.edit-post-layout .interface-interface-skeleton__main {
+		margin-right: var(--mystarter-inspector-width) !important;
+	}
+
+	.edit-post-layout .interface-complementary-area,
+	.edit-post-layout .interface-complementary-area .components-panel,
+	.edit-post-layout .interface-complementary-area .components-panel__header,
+	.edit-post-layout .interface-complementary-area .components-panel__body,
+	.edit-post-layout .interface-complementary-area .components-panel__row,
+	.edit-post-layout .interface-complementary-area .components-panel__header-title,
+	.edit-post-layout .interface-complementary-area .components-panel__header-toggle,
+	.edit-post-layout .interface-complementary-area .components-panel__header-badge,
+	.edit-post-layout .interface-complementary-area .components-base-control,
+	.edit-post-layout .interface-complementary-area .components-base-control__field,
+	.edit-post-layout .interface-complementary-area .components-input-control,
+	.edit-post-layout .interface-complementary-area .components-input-control__container,
+	.edit-post-layout .interface-complementary-area .components-input-control__label,
+	.edit-post-layout .interface-complementary-area .components-input-control__backdrop,
+	.edit-post-layout .interface-complementary-area .components-input-control__suffix,
+	.edit-post-layout .interface-complementary-area .components-text-control__input,
+	.edit-post-layout .interface-complementary-area .components-textarea-control__input,
+	.edit-post-layout .interface-complementary-area .components-select-control__input,
+	.edit-post-layout .interface-complementary-area .components-range-control__root,
+	.edit-post-layout .interface-complementary-area .components-range-control__wrapper,
+	.edit-post-layout .interface-complementary-area .components-range-control__track,
+	.edit-post-layout .interface-complementary-area .components-range-control__tooltip,
+	.edit-post-layout .interface-complementary-area .components-toggle-control,
+	.edit-post-layout .interface-complementary-area .components-toggle-control__label,
+	.edit-post-layout .interface-complementary-area .components-toggle-control__help,
+	.edit-post-layout .interface-complementary-area .components-toggle-control__input,
+	.edit-post-layout .interface-complementary-area .components-flex,
+	.edit-post-layout .interface-complementary-area .components-button,
+	.edit-post-layout .interface-complementary-area .block-editor-media-placeholder,
+	.edit-post-layout .interface-complementary-area .block-editor-media-placeholder__upload-button,
+	.edit-post-layout .interface-complementary-area .block-editor-media-placeholder__cancel-button,
+	.edit-post-layout .interface-complementary-area .block-editor-media-placeholder__url-input form,
+	.edit-post-layout .interface-complementary-area .block-editor-media-placeholder__url-input input {
+		width: 100% !important;
+		max-width: 100% !important;
+		box-sizing: border-box;
+	}
+
+	.edit-post-layout .interface-complementary-area .components-button {
+		justify-content: center;
+	}
+
+	.edit-post-layout .interface-complementary-area .components-panel__body {
+		padding-top: 1.25rem;
+		padding-bottom: 1.25rem;
+		display: grid;
+		gap: 1.15rem;
+	}
+
+	.edit-post-layout
+		.interface-complementary-area
+		.components-panel__body
+		> *:first-child {
+		margin-top: 0 !important;
+	}
+
+	.edit-post-layout
+		.interface-complementary-area
+		.components-base-control__label {
+		margin-bottom: 0.4rem;
+		font-weight: 600;
+	}
+
+	.edit-post-layout
+		.interface-complementary-area
+		.components-base-control__help {
+		margin-top: 0.45rem;
+	}
+}
