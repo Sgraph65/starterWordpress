@@ -24,7 +24,8 @@ src/
   index.js               → Point d’entrée JS (importe les SCSS)
   style.scss             → Styles front
   editor.scss            → Styles éditeur Gutenberg
-  styles/_variables.scss → Variables Sass à personnaliser
+ styles/_variables.scss → Variables Sass à personnaliser
+theme.json              → Palette & styles client (couleurs, boutons, etc.)
 ```
 
 ### Ajouter du CSS / SCSS
@@ -49,6 +50,7 @@ src/
 2. Mettre à jour l’en-tête de `style.css` (Theme Name, Description, Author, Text Domain…).
 3. Remplacer `screenshot.png` par la miniature du projet.
 4. Lancer `npm install` puis ajuster SCSS/JS/PHP selon les besoins.
-5. Ajouter éventuellement un `theme.json` ou des patterns spécifiques au client.
+5. Adapter `theme.json` : palette, typographies, styles globaux.
+6. Ajouter des patterns/templates spécifiques si nécessaire.
 
 Le parent **MyStarter** reste responsable des blocs personnalisés et des réglages globaux ; concentre-toi ici sur les adaptations propres au site livrable.
