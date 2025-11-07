@@ -1,0 +1,15 @@
+{
+  "apiVersion": 2,
+  "name": "mystarter/columns-grid-column",
+  "title": "Colonne",
+  "category": "design",
+  "parent": [
+    "mystarter/columns-grid"
+  ],
+  "icon": "align-left",
+  "description": "Colonne interne utilisée par le bloc Grille de colonnes.",
+  "supports": {
+    "inserter": false,
+    "html": false
+  }
+}
