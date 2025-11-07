@@ -7,6 +7,95 @@ if ( ! defined( 'MYSTARTER_VERSION' ) ) {
     define( 'MYSTARTER_VERSION', wp_get_theme()->get( 'Version' ) );
 }
 
+if ( ! defined( 'MYSTARTER_BLOCKS_CONFIG' ) ) {
+    define( 'MYSTARTER_BLOCKS_CONFIG', get_theme_file_path( 'config/blocks.json' ) );
+}
+
+if ( ! function_exists( 'mystarter_get_default_blocks' ) ) {
+    /**
+     * Liste des blocs personnalisés disponibles par défaut.
+     *
+     * @return array
+     */
+    function mystarter_get_default_blocks(): array {
+        return [
+            'image',
+            'image-fullwidth',
+            'gallery',
+            'slider',
+            'text-image',
+            'button-group',
+            'quote',
+            'call-to-action',
+            'rebound',
+            'news-feed',
+            'hero-banner',
+            'hero-split',
+            'column-text',
+            'timeline',
+            'faq',
+            'logos-grid',
+            'stats',
+            'testimonials',
+            'pricing-table',
+        ];
+    }
+}
+
+if ( ! function_exists( 'mystarter_get_configured_blocks' ) ) {
+    /**
+     * Retourne les blocs actifs à partir du fichier de configuration généré par le script.
+     *
+     * @return array{available:array, active:array}
+     */
+    function mystarter_get_configured_blocks(): array {
+        $defaults = mystarter_get_default_blocks();
+
+        if ( ! file_exists( MYSTARTER_BLOCKS_CONFIG ) ) {
+            return [
+                'available' => $defaults,
+                'active'    => $defaults,
+            ];
+        }
+
+        $config = json_decode( (string) file_get_contents( MYSTARTER_BLOCKS_CONFIG ), true );
+
+        if ( ! is_array( $config ) ) {
+            return [
+                'available' => $defaults,
+                'active'    => $defaults,
+            ];
+        }
+
+        $available = array_values(
+            array_intersect(
+                $config['available'] ?? [],
+                $defaults
+            )
+        );
+
+        if ( empty( $available ) ) {
+            $available = $defaults;
+        }
+
+        $active = array_values(
+            array_intersect(
+                $config['active'] ?? $available,
+                $available
+            )
+        );
+
+        if ( empty( $active ) ) {
+            $active = $available;
+        }
+
+        return [
+            'available' => array_values( array_unique( $available ) ),
+            'active'    => array_values( array_unique( $active ) ),
+        ];
+    }
+}
+
 if ( ! function_exists( 'mystarter_setup' ) ) {
     /**
      * Configure theme defaults and support for various WordPress features.
@@ -176,27 +265,12 @@ add_filter( 'block_categories_all', 'mystarter_block_categories' );
 function mystarter_allowed_blocks( $allowed_blocks ): array {
     unset( $allowed_blocks );
 
-    return [
-        'mystarter/image',
-        'mystarter/image-fullwidth',
-        'mystarter/gallery',
-        'mystarter/slider',
-        'mystarter/text-image',
-        'mystarter/button-group',
-        'mystarter/quote',
-        'mystarter/call-to-action',
-        'mystarter/rebound',
-        'mystarter/news-feed',
-        'mystarter/hero-banner',
-        'mystarter/hero-split',
-        'mystarter/column-text',
-        'mystarter/timeline',
-        'mystarter/faq',
-        'mystarter/logos-grid',
-        'mystarter/stats',
-        'mystarter/testimonials',
-        'mystarter/pricing-table',
-    ];
+    $configured = mystarter_get_configured_blocks();
+
+    return array_map(
+        static fn( $slug ) => sprintf( 'mystarter/%s', $slug ),
+        $configured['active']
+    );
 }
 add_filter( 'allowed_block_types_all', 'mystarter_allowed_blocks' );
 

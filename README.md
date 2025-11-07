@@ -185,6 +185,24 @@ add_action(
 
 En suivant ces étapes, MyStarter reste le parent centralisé et chaque site client dispose d’une couche propre et maintenable.
 
+### 6. Activer ou désactiver des blocs MyStarter
+
+Le thème parent n’importe plus automatiquement tous les blocs personnalisés : la liste est gérée par `config/blocks.json` et par le fichier généré `src/blocks-active.js`. Utilise le script dédié pour choisir quels blocs charger côté BO/FO :
+
+```bash
+cd wordpress/wp-content/themes/mystarter
+./scripts/configure-blocks.sh        # mode interactif
+# ou : ./scripts/configure-blocks.sh image slider hero-banner
+yarn build                           # régénère le bundle avec la nouvelle liste
+```
+
+- Le script détecte les dossiers `src/blocks/*`, te propose de les activer/désactiver et met à jour :
+  - `config/blocks.json` (disponibles + actifs)
+  - `src/blocks-active.js` (imports JS effectifs)
+  - le filtre PHP `allowed_block_types_all` via la même config JSON
+- Tu peux le relancer à tout moment pendant le projet pour ajouter/retirer des blocs.  
+  Il suffit ensuite de lancer `yarn build` (ou `yarn start` si tu es déjà en watch) pour prendre en compte la nouvelle sélection.
+
 ### Gestion des icônes du bloc « Colonne texte »
 
 Le bloc `mystarter/column-text` peut afficher jusqu’à 6 colonnes, chaque colonne acceptant une icône optionnelle. Trois sources sont possibles :

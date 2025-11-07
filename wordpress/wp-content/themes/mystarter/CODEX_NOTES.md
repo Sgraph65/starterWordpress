@@ -57,6 +57,10 @@ Chaque bloc utilise désormais une approche “Formulaire” dans le panneau Ins
 2. `npm run build` (ou `npm run start` pendant le dev)
 3. Activer le **thème enfant** du projet (exemple fourni `wp-content/themes/mystarter-child`) ; il référence automatiquement MyStarter.
 4. Vérifier `Apparence → Compositions` pour retrouver les patterns hero/CTA.
+5. **Sélectionner les blocs nécessaires** via `./scripts/configure-blocks.sh` si le projet ne doit exposer qu’une partie du catalogue. Le script met à jour `config/blocks.json` + `src/blocks-active.js` et alimente :
+   - les imports JS (seuls les blocs actifs sont bundlés) ;
+   - le filtre `allowed_block_types_all` côté PHP.
+   Relancer `yarn build` pour appliquer les changements.
 
 ## Thème enfant
 
