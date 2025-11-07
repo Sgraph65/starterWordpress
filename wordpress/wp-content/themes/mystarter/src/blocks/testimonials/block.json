@@ -1,0 +1,34 @@
+{
+	"apiVersion": 2,
+	"name": "mystarter/testimonials",
+	"title": "Slider témoignages",
+	"description": "Carrousel de témoignages client avec photo et rôle.",
+	"category": "mystarter",
+	"icon": "format-quote",
+	"supports": {
+		"align": ["wide", "full"],
+		"html": false,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"items": {
+			"type": "array",
+			"default": []
+		},
+		"count": {
+			"type": "number",
+			"default": 3
+		},
+		"autoplay": {
+			"type": "boolean",
+			"default": true
+		},
+		"interval": {
+			"type": "number",
+			"default": 6000
+		}
+	}
+}

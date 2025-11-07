@@ -60,13 +60,16 @@ cp .env.example .env
 
    - Si aucune base n’est fournie, visite l’URL et effectue l’installation WordPress classique (le thème MyStarter est déjà présent dans `wp-content/themes/mystarter`).
 
-4. **Installer les dépendances du thème**
+4. **Installer les dépendances du thème (Yarn par défaut)**
 
    ```bash
    cd wordpress/wp-content/themes/mystarter
-   npm install
-   npm run build
+   yarn install
+   yarn build
    ```
+
+   > Si tu dois absolument utiliser npm, supprime d’abord `yarn.lock` pour éviter les conflits
+   > de résolutions, mais la stack officielle du starter repose maintenant sur Yarn 1.x.
 
    Active ensuite le thème MyStarter dans l’admin WordPress.
 

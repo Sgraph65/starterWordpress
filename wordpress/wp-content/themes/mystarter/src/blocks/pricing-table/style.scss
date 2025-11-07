@@ -1,0 +1,40 @@
+@use "../../styles/variables" as *;
+
+.mystarter-pricing {
+	display: grid;
+	gap: clamp(1rem, 3vw, 2rem);
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+	&__card {
+		padding: clamp(1.25rem, 3vw, 1.75rem);
+		border-radius: $border-radius;
+		border: 1px solid rgba($color-muted, 0.2);
+		box-shadow: $shadow-soft;
+		text-align: center;
+
+		&.is-featured {
+			border-color: $color-accent;
+			box-shadow: 0 20px 35px rgba($color-accent, 0.15);
+		}
+	}
+
+	&__price {
+		font-size: 2rem;
+		font-weight: 600;
+		color: $color-accent;
+		small {
+			display: block;
+			font-size: 0.85rem;
+			color: $color-muted;
+		}
+	}
+
+	&__features {
+		list-style: none;
+		padding: 0;
+		margin: 1rem 0;
+		display: grid;
+		gap: 0.35rem;
+		text-align: left;
+	}
+}

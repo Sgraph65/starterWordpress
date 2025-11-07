@@ -1,0 +1,9 @@
+@use "../../styles/variables" as *;
+
+.mystarter-faq__richtext {
+	min-height: 60px;
+	border: 1px solid rgba($color-muted, 0.4);
+	padding: 0.5rem;
+	border-radius: 8px;
+	background: #fff;
+}

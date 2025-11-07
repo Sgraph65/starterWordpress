@@ -1,0 +1,73 @@
+@use "../../styles/variables" as *;
+
+.mystarter-hero-split {
+	display: grid;
+	gap: clamp(1.5rem, 3vw, 3rem);
+	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+	align-items: center;
+	padding: clamp(2rem, 6vw, 4rem);
+	background: linear-gradient(135deg, rgba($color-accent, 0.07), #fff);
+	border-radius: $border-radius;
+
+	&__content-wrap {
+		display: flex;
+		flex-direction: column;
+		gap: 0.9rem;
+	}
+
+	&__eyebrow {
+		margin: 0;
+		text-transform: uppercase;
+		font-size: 0.9rem;
+		letter-spacing: 0.12em;
+		color: $color-muted;
+	}
+
+	h1 {
+		margin: 0;
+		font-size: clamp(2rem, 4vw, 3rem);
+		font-weight: 600;
+		color: $color-text;
+	}
+
+	&__content {
+		font-size: 1.05rem;
+		line-height: 1.7;
+		color: rgba($color-text, 0.92);
+	}
+
+	&__media {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		img {
+			width: 100%;
+			height: auto;
+			border-radius: $border-radius;
+			box-shadow: $shadow-soft;
+			object-fit: cover;
+		}
+	}
+
+	&__placeholder {
+		width: 100%;
+		min-height: 240px;
+		border: 1px dashed rgba($color-muted, 0.5);
+		border-radius: $border-radius;
+		display: grid;
+		place-items: center;
+		color: rgba($color-muted, 0.9);
+		background: rgba(#fff, 0.6);
+	}
+
+	&.has-media-left {
+		.mystarter-hero-split__content-wrap {
+			order: 2;
+		}
+
+		.mystarter-hero-split__media {
+			order: 1;
+		}
+	}
+}

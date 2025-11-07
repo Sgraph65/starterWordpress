@@ -1,0 +1,40 @@
+@use "../../styles/variables" as *;
+
+.mystarter-faq {
+	display: grid;
+	gap: 1rem;
+
+	&__item {
+		border: 1px solid rgba($color-muted, 0.3);
+		border-radius: $border-radius;
+		background: #fff;
+	}
+
+	&__question {
+		width: 100%;
+		text-align: left;
+		background: none;
+		border: 0;
+		font-weight: 600;
+		font-size: 1rem;
+		padding: 1rem 1.25rem;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		cursor: pointer;
+	}
+
+	details > summary {
+		list-style: none;
+	}
+
+	details[open] > summary::after {
+		transform: rotate(90deg);
+	}
+
+	&__answer-content {
+		padding: 0 1.25rem 1.25rem;
+		color: $color-text;
+		line-height: 1.6;
+	}
+}

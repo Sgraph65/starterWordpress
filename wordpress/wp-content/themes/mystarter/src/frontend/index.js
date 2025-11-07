@@ -17,6 +17,15 @@ const sliderConfigs = [
 		dots: '.mystarter-hero__dots',
 		dotClass: 'mystarter-hero__dot',
 	},
+	{
+		selector: '.mystarter-testimonials',
+		slidesWrapper: '.mystarter-testimonials__slides',
+		slide: '.mystarter-testimonials__slide',
+		prev: '.mystarter-testimonials__control.is-prev',
+		next: '.mystarter-testimonials__control.is-next',
+		dots: '.mystarter-testimonials__dots',
+		dotClass: 'mystarter-testimonials__dot',
+	},
 ];
 
 const initSliders = () => {

@@ -1,0 +1,20 @@
+@use "../../styles/variables" as *;
+
+.mystarter-hero-split__richtext {
+	min-height: 120px;
+	border: 1px solid rgba($color-muted, 0.4);
+	padding: 0.75rem;
+	border-radius: 10px;
+	background: #fff;
+}
+
+.mystarter-hero-split__media-preview {
+	margin-top: 0.75rem;
+
+	img {
+		max-width: 100%;
+		border-radius: 12px;
+		box-shadow: $shadow-soft;
+		display: block;
+	}
+}

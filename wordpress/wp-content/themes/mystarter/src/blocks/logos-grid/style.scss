@@ -1,0 +1,46 @@
+@use "../../styles/variables" as *;
+
+.mystarter-logos {
+	display: grid;
+	gap: clamp(1rem, 2vw, 1.5rem);
+	grid-template-columns: repeat(
+		var(--mystarter-logos-columns, auto-fit),
+		minmax(140px, 1fr)
+	);
+	align-items: center;
+
+	&__item {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0.75rem;
+		background: #fff;
+		border-radius: $border-radius;
+		box-shadow: $shadow-soft;
+
+		img {
+			max-height: 60px;
+			width: auto;
+		}
+	}
+
+	&__placeholder {
+		min-height: 60px;
+		display: grid;
+		place-items: center;
+		color: rgba($color-muted, 0.8);
+		border: 1px dashed rgba($color-muted, 0.4);
+		border-radius: $border-radius;
+		width: 100%;
+	}
+
+	&.is-grayscale img {
+		filter: grayscale(1);
+		opacity: 0.7;
+
+		&:hover {
+			filter: none;
+			opacity: 1;
+		}
+	}
+}

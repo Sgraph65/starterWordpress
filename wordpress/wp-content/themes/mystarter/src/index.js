@@ -16,6 +16,13 @@ import './blocks/call-to-action';
 import './blocks/rebound';
 import './blocks/news-feed';
 import './blocks/hero-banner';
+import './blocks/hero-split';
 import './blocks/column-text';
+import './blocks/timeline';
+import './blocks/faq';
+import './blocks/logos-grid';
+import './blocks/stats';
+import './blocks/testimonials';
+import './blocks/pricing-table';
 
 import './frontend';

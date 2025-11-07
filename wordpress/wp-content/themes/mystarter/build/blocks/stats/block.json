@@ -1,0 +1,29 @@
+{
+  "apiVersion": 2,
+  "name": "mystarter/stats",
+  "title": "Stats / KPIs",
+  "description": "Affiche des chiffres clés avec description.",
+  "category": "mystarter",
+  "icon": "chart-line",
+  "supports": {
+    "align": [
+      "wide",
+      "full"
+    ],
+    "html": false,
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "attributes": {
+    "items": {
+      "type": "array",
+      "default": []
+    },
+    "count": {
+      "type": "number",
+      "default": 3
+    }
+  }
+}

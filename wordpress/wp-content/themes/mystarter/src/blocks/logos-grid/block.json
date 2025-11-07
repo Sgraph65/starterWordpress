@@ -1,0 +1,30 @@
+{
+	"apiVersion": 2,
+	"name": "mystarter/logos-grid",
+	"title": "Grille de logos",
+	"description": "Affiche les logos de partenaires ou clients.",
+	"category": "mystarter",
+	"icon": "images-alt2",
+	"supports": {
+		"align": ["wide", "full"],
+		"html": false,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"columns": {
+			"type": "number",
+			"default": 4
+		},
+		"items": {
+			"type": "array",
+			"default": []
+		},
+		"grayscale": {
+			"type": "boolean",
+			"default": false
+		}
+	}
+}

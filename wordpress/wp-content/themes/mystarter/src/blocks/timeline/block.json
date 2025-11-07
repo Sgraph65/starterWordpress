@@ -1,0 +1,30 @@
+{
+	"apiVersion": 2,
+	"name": "mystarter/timeline",
+	"title": "Timeline",
+	"description": "Liste les étapes clés d’un process avec titre et description.",
+	"category": "mystarter",
+	"icon": "schedule",
+	"supports": {
+		"align": ["wide", "full"],
+		"html": false,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"steps": {
+			"type": "number",
+			"default": 3
+		},
+		"items": {
+			"type": "array",
+			"default": []
+		},
+		"layout": {
+			"type": "string",
+			"default": "vertical"
+		}
+	}
+}

@@ -4,3 +4,9 @@
 	color: $color-text;
 	background-color: $color-editor-background;
 }
+
+.mystarter-placeholder {
+	display: inline-block;
+	color: rgba($color-muted, 0.8);
+	font-style: italic;
+}

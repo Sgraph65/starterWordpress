@@ -1,0 +1,116 @@
+@use "../../styles/variables" as *;
+
+.mystarter-testimonials {
+	position: relative;
+	padding: clamp(1.5rem, 4vw, 2.5rem);
+	border-radius: $border-radius;
+	background: linear-gradient(135deg, rgba($color-accent, 0.07), #fff);
+	box-shadow: $shadow-soft;
+
+	&__viewport {
+		position: relative;
+		overflow: hidden;
+	}
+
+	&__slides {
+		display: flex;
+		transition: transform 0.4s ease;
+	}
+
+	&__slide {
+		min-width: 100%;
+		padding: clamp(1.25rem, 4vw, 2.5rem);
+	}
+
+	blockquote {
+		margin: 0 0 1.2rem;
+		font-style: italic;
+		font-size: 1.1rem;
+		line-height: 1.7;
+		color: rgba($color-text, 0.95);
+	}
+
+	&__author {
+		display: flex;
+		align-items: center;
+		gap: 0.85rem;
+
+		img {
+			width: 56px;
+			height: 56px;
+			border-radius: 999px;
+			object-fit: cover;
+			background: #fff;
+			box-shadow: $shadow-soft;
+		}
+
+		strong {
+			display: block;
+			font-size: 1rem;
+			color: $color-text;
+		}
+
+		span {
+			font-size: 0.9rem;
+			color: $color-muted;
+		}
+	}
+
+	&__avatar-fallback {
+		display: grid;
+		place-items: center;
+		font-size: 0.75rem;
+		color: rgba($color-muted, 0.8);
+		width: 56px;
+		height: 56px;
+		border-radius: 999px;
+		background: #fff;
+		box-shadow: $shadow-soft;
+	}
+
+	&__control {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 38px;
+		height: 38px;
+		border-radius: 999px;
+		border: none;
+		background: #fff;
+		box-shadow: $shadow-soft;
+		cursor: pointer;
+		display: grid;
+		place-items: center;
+		color: $color-text;
+
+		&.is-prev {
+			left: 0.75rem;
+		}
+
+		&.is-next {
+			right: 0.75rem;
+		}
+	}
+
+	&__dots {
+		display: flex;
+		justify-content: center;
+		gap: 0.4rem;
+		margin-top: 1.5rem;
+	}
+
+	&__dot {
+		width: 10px;
+		height: 10px;
+		border-radius: 999px;
+		background: rgba($color-muted, 0.5);
+		border: none;
+		padding: 0;
+		cursor: pointer;
+
+		&.is-active {
+			background: $color-accent;
+			transform: scale(1.1);
+		}
+	}
+}

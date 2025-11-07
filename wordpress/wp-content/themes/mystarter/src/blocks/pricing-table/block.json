@@ -1,0 +1,26 @@
+{
+	"apiVersion": 2,
+	"name": "mystarter/pricing-table",
+	"title": "Tableau de prix",
+	"description": "Compare plusieurs offres avec prix, avantages et CTA.",
+	"category": "mystarter",
+	"icon": "money",
+	"supports": {
+		"align": ["wide", "full"],
+		"html": false,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"plans": {
+			"type": "array",
+			"default": []
+		},
+		"count": {
+			"type": "number",
+			"default": 3
+		}
+	}
+}

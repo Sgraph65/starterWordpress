@@ -1,0 +1,30 @@
+{
+	"apiVersion": 2,
+	"name": "mystarter/faq",
+	"title": "Bloc FAQ",
+	"description": "Questions fréquentes avec affichage accordéon.",
+	"category": "mystarter",
+	"icon": "editor-help",
+	"supports": {
+		"align": ["wide", "full"],
+		"html": false,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"items": {
+			"type": "array",
+			"default": []
+		},
+		"questions": {
+			"type": "number",
+			"default": 4
+		},
+		"display": {
+			"type": "string",
+			"default": "accordion"
+		}
+	}
+}

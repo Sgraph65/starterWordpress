@@ -188,7 +188,14 @@ function mystarter_allowed_blocks( $allowed_blocks ): array {
         'mystarter/rebound',
         'mystarter/news-feed',
         'mystarter/hero-banner',
+        'mystarter/hero-split',
         'mystarter/column-text',
+        'mystarter/timeline',
+        'mystarter/faq',
+        'mystarter/logos-grid',
+        'mystarter/stats',
+        'mystarter/testimonials',
+        'mystarter/pricing-table',
     ];
 }
 add_filter( 'allowed_block_types_all', 'mystarter_allowed_blocks' );
