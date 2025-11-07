@@ -1,0 +1,37 @@
+@use "../../styles/variables" as *;
+
+.mystarter-two-column {
+	--mystarter-columns-count: 2;
+
+	border: 1px dashed rgba($color-muted, 0.4);
+	padding: clamp(1rem, 2vw, 1.5rem);
+	display: grid;
+	gap: clamp(1rem, 3vw, 2rem);
+	grid-template-columns: repeat(
+		var(--mystarter-columns-count),
+		minmax(0, 1fr)
+	);
+
+	&__column {
+		background: rgba($color-muted, 0.05);
+		border: 1px dashed rgba($color-muted, 0.5);
+	}
+}
+
+.mystarter-two-column__richtext {
+	min-height: 100px;
+	padding: 0.75rem;
+	border: 1px solid rgba($color-muted, 0.4);
+	border-radius: 8px;
+	background: #fff;
+}
+
+.mystarter-two-column__preview {
+	margin-top: 0.75rem;
+
+	img {
+		max-width: 80px;
+		border-radius: 8px;
+		border: 1px solid rgba($color-muted, 0.3);
+	}
+}

@@ -181,3 +181,19 @@ add_action(
 7. Activer le nouveau thème enfant dans WordPress.
 
 En suivant ces étapes, MyStarter reste le parent centralisé et chaque site client dispose d’une couche propre et maintenable.
+
+### Gestion des icônes du bloc « Colonne texte »
+
+Le bloc `mystarter/column-text` peut afficher jusqu’à 6 colonnes, chaque colonne acceptant une icône optionnelle. Trois sources sont possibles :
+
+1. **Dashicons** intégrés à WordPress (sélection dans la liste).
+2. **Images uploadées** depuis la médiathèque pour chaque colonne.
+3. **Icônes prédéfinies** : tout fichier placé dans `src/blocks/column-text/icons/library/` est détecté automatiquement.
+
+Pour personnaliser ces icônes dans un thème enfant :
+
+1. Reproduis l’arborescence `src/blocks/column-text/icons/library/` dans ton thème enfant.
+2. Ajoute tes fichiers `.svg`, `.png` ou `.jpg` (le nom sera utilisé comme label).
+3. Lance `npm install && npm run build` depuis l’enfant afin de générer son propre bundle.
+
+> Alternative : exposer un petit script (enqueue block editor assets) qui utilise un filtre JS pour modifier la liste des presets sans copier tout le bloc (voir `icons.js` pour la logique).

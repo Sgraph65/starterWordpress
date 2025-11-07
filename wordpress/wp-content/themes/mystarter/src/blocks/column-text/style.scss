@@ -1,0 +1,69 @@
+@use "../../styles/variables" as *;
+
+.mystarter-two-column {
+	--mystarter-columns-count: 2;
+
+	display: grid;
+	gap: clamp(1.5rem, 4vw, 3rem);
+	grid-template-columns: repeat(
+		var(--mystarter-columns-count),
+		minmax(0, 1fr)
+	);
+	border-radius: $border-radius;
+
+	&__column {
+		display: grid;
+		gap: 0.75rem;
+		padding: clamp(1.5rem, 4vw, 2.5rem);
+		background: #fff;
+		border: 1px solid rgba($color-muted, 0.2);
+		box-shadow: $shadow-soft;
+		border-radius: $border-radius;
+	}
+
+	h3 {
+		margin: 0;
+		font-size: clamp(1.25rem, 3vw, 1.6rem);
+		font-family: $font-secondary;
+	}
+
+	&__content {
+		color: $color-text;
+		font-size: 1rem;
+		line-height: 1.7;
+	}
+
+	&__icon {
+		width: 48px;
+		height: 48px;
+		border-radius: 999px;
+		background: linear-gradient(120deg, $color-accent, $color-accent-dark);
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		color: #fff;
+
+		.dashicons {
+			font-size: 20px;
+			width: auto;
+			height: auto;
+		}
+
+		&.is-image {
+			background: transparent;
+			padding: 0;
+
+			img {
+				width: 48px;
+				height: 48px;
+				object-fit: contain;
+			}
+		}
+	}
+}
+
+@media (max-width: 900px) {
+	.mystarter-two-column {
+		grid-template-columns: 1fr;
+	}
+}
