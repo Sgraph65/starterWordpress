@@ -16,7 +16,6 @@ import './blocks/call-to-action';
 import './blocks/rebound';
 import './blocks/news-feed';
 import './blocks/hero-banner';
-import './blocks/columns-grid';
-import './blocks/columns-grid-column';
+import './blocks/column-text';
 
 import './frontend';

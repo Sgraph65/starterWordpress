@@ -1,8 +1,8 @@
 {
   "apiVersion": 2,
-  "name": "mystarter/columns-grid",
-  "title": "Grille de colonnes",
-  "description": "Crée une grille de 1 à 6 colonnes pouvant accueillir les modules MyStarter.",
+  "name": "mystarter/column-text",
+  "title": "Colonne texte",
+  "description": "Affiche de 2 à 6 colonnes de texte avec icône optionnelle.",
   "category": "mystarter",
   "icon": "columns",
   "supports": {
@@ -12,14 +12,18 @@
     ],
     "html": false,
     "spacing": {
-      "padding": true,
-      "margin": true
+      "margin": true,
+      "padding": true
     }
   },
   "attributes": {
     "columns": {
       "type": "number",
       "default": 2
+    },
+    "items": {
+      "type": "array",
+      "default": []
     }
   }
 }

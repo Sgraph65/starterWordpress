@@ -1,0 +1,26 @@
+{
+	"apiVersion": 2,
+	"name": "mystarter/column-text",
+	"title": "Colonne texte",
+	"description": "Affiche de 2 à 6 colonnes de texte avec icône optionnelle.",
+	"category": "mystarter",
+	"icon": "columns",
+	"supports": {
+		"align": ["wide", "full"],
+		"html": false,
+		"spacing": {
+			"margin": true,
+			"padding": true
+		}
+	},
+	"attributes": {
+		"columns": {
+			"type": "number",
+			"default": 2
+		},
+		"items": {
+			"type": "array",
+			"default": []
+		}
+	}
+}
