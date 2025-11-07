@@ -21,7 +21,7 @@ const Save = ({ attributes }) => {
 					<RichText.Content
 						tagName="div"
 						value={content}
-						className="mystarter-text-image__content"
+						className="mystarter-text-image__content-html"
 					/>
 				) : null}
 			</div>

@@ -22,7 +22,7 @@
 		"content": {
 			"type": "string",
 			"source": "html",
-			"selector": ".mystarter-text-image__content"
+			"selector": ".mystarter-text-image__content-html"
 		},
 		"mediaId": {
 			"type": "number"

@@ -2,14 +2,15 @@ import { __ } from '@wordpress/i18n';
 import {
 	InspectorControls,
 	MediaUpload,
+	RichText,
 	useBlockProps,
 } from '@wordpress/block-editor';
 import {
 	Button,
+	BaseControl,
 	PanelBody,
 	SelectControl,
 	TextControl,
-	TextareaControl,
 } from '@wordpress/components';
 import { Fragment } from '@wordpress/element';
 
@@ -49,9 +50,10 @@ const Edit = ({ attributes, setAttributes }) => {
 	};
 
 	const previewContent = content ? (
-		<div
-			className="mystarter-text-image__content"
-			dangerouslySetInnerHTML={{ __html: content }}
+		<RichText.Content
+			tagName="div"
+			className="mystarter-text-image__content-html"
+			value={content}
 		/>
 	) : null;
 
@@ -64,15 +66,38 @@ const Edit = ({ attributes, setAttributes }) => {
 						value={title || ''}
 						onChange={(value) => setAttributes({ title: value })}
 					/>
-					<TextareaControl
+					<BaseControl
 						label={__('Texte', 'mystarter')}
 						help={__(
-							'HTML de base accepté (ex. <p>, <strong>).',
+							'Utilisez la barre d’outils pour appliquer la mise en forme.',
 							'mystarter'
 						)}
-						value={content || ''}
-						onChange={(value) => setAttributes({ content: value })}
-					/>
+					>
+						<RichText
+							tagName="div"
+							className="mystarter-text-image__richtext-control"
+							value={content || ''}
+							onChange={(value) =>
+								setAttributes({ content: value })
+							}
+							placeholder={__(
+								'Saisissez votre contenu…',
+								'mystarter'
+							)}
+							allowedFormats={[
+								'core/bold',
+								'core/italic',
+								'core/underline',
+								'core/strikethrough',
+								'core/link',
+								'core/list',
+								'core/keyboard',
+								'core/subscript',
+								'core/superscript',
+								'core/code',
+							]}
+						/>
+					</BaseControl>
 				</PanelBody>
 
 				<PanelBody title={__('Image', 'mystarter')}>
